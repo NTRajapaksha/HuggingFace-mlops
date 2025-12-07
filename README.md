@@ -2,7 +2,7 @@
 title: Optimized Sentiment Service
 emoji: ⚡
 colorFrom: yellow
-colorTo: orange
+colorTo: red
 sdk: gradio
 sdk_version: 4.19.2
 app_file: src/app.py
