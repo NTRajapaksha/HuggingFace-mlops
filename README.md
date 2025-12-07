@@ -14,9 +14,9 @@ license: mit
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
 [![Build Status](https://github.com/NTRajapaksha/HuggingFace-mlops/actions/workflows/sync_to_hub.yaml/badge.svg)](https://github.com/[YOUR_GITHUB_USERNAME]/[YOUR_REPO_NAME]/actions)
-[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Live%20Demo-blue)](https://huggingface.co/spaces/[YOUR_HF_USERNAME]/optimized-sentiment-service)
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Live%20Demo-blue)](https://huggingface.co/spaces/nim001/optimized-sentiment-service)
 
-> **Live Demo:** [Click here to try the App on Hugging Face Spaces](https://huggingface.co/spaces/nim001/optimized-sentiment-service)
+> **Live Demo:** [Click here to try the App on Hugging Face Spaces]()
 
 An end-to-end MLOps project that deploys a **Quantized (Int8) DistilBERT model** for real-time financial sentiment analysis. This project demonstrates how to optimize Transformer models for CPU inference, reducing latency and cost while maintaining accuracy.
 
