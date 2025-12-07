@@ -1,19 +1,27 @@
 import gradio as gr
 from optimum.onnxruntime import ORTModelForSequenceClassification
 from transformers import AutoTokenizer, pipeline
+from pathlib import Path
 import time
 
 # 1. Global Setup
 # We load the model once (at startup) so we don't reload it for every user request.
 # This is a standard production optimization.
-model_path = "onnx_model"
-print("⏳ Loading Quantized Model...")
-model = ORTModelForSequenceClassification.from_pretrained(
-    model_path, file_name="model_quantized.onnx"
-)
-tokenizer = AutoTokenizer.from_pretrained(model_path)
+model_path = Path(__file__).parent.parent / "onnx_model"
 
-# Create the pipeline
+print(f"⏳ Loading Quantized Model from: {model_path}")
+
+# Verify the file exists (helps debugging)
+if not model_path.exists():
+    raise FileNotFoundError(f"❌ Model folder not found at {model_path}")
+
+model = ORTModelForSequenceClassification.from_pretrained(
+    model_path, 
+    file_name="model_quantized.onnx",
+    local_files_only=True  # <--- FORCE it to look locally
+)
+tokenizer = AutoTokenizer.from_pretrained(model_path, local_files_only=True)
+
 pipe = pipeline("text-classification", model=model, tokenizer=tokenizer)
 print("✅ Model Loaded!")
 
