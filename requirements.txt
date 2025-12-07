@@ -1,0 +1,9 @@
+torch
+transformers
+optimum[onnxruntime]
+gradio
+pytest
+black
+ruff
+mkdocs
+wandb
